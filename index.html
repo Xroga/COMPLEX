@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeCraft · write · debug · ship</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- overlay for mobile nav -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">CodeCraft<span>.</span></div>
+      <button class="hamburger" id="hamburger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / HOME -->
+    <section id="home" class="container section-pad">
+      <div class="hero">
+        <span class="tag">✦ clean code · sharp debugging</span>
+        <h1>We Write Clean Code.<br>We Debug the Rest.</h1>
+        <p>From automation scripts to full-stack web apps — we craft robust, maintainable code and hunt down bugs until your software runs like a dream.</p>
+        <div class="btn-group">
+          <a href="#order" class="btn">🚀 Submit your code</a>
+          <a href="#services" class="btn btn-outline">See services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="container section-pad">
+      <h2>⚡ What we build & fix</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon">🧰</div>
+          <h3>Code writing</h3>
+          <p>Custom scripts, web apps, automation pipelines, APIs — production-ready from day one.</p>
+          <div class="price">from $299</div>
+        </div>
+        <div class="service-card">
+          <div class="icon">🔍</div>
+          <h3>Debugging & refactoring</h3>
+          <p>We squash bugs, optimize performance, and refactor legacy code into clean, modern architecture.</p>
+          <div class="price">from $149</div>
+        </div>
+        <div class="service-card">
+          <div class="icon">🚀</div>
+          <h3>Full project delivery</h3>
+          <p>From concept to deployment — we handle design, development, testing, and launch.</p>
+          <div class="price">from $999</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDER FORM -->
+    <section id="order" class="container section-pad">
+      <h2>📦 Submit your code</h2>
+      <p style="text-align:center; margin-bottom:2rem;">Tell us what you need — we'll review and get back within 24 hours.</p>
+      <form class="order-form" id="orderForm">
+        <div class="form-row">
+          <label for="projectType">Project type</label>
+          <select id="projectType" required>
+            <option value="">Select type</option>
+            <option value="bug-fix">Bug fix</option>
+            <option value="feature-dev">Feature development</option>
+            <option value="full-project">Full project</option>
+            <option value="code-review">Code review</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="codeSnippet">Paste your code (optional)</label>
+          <textarea id="codeSnippet" placeholder="Paste relevant code here..."></textarea>
+        </div>
+        <div class="form-row">
+          <label for="description">Describe what you need</label>
+          <textarea id="description" placeholder="Describe the issue, feature, or project in detail..." required></textarea>
+        </div>
+        <div class="form-row">
+          <label for="deadline">Deadline</label>
+          <input type="date" id="deadline">
+        </div>
+        <button type="submit" class="btn">Send request ✨</button>
+      </form>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="container section-pad">
+      <h2>🏆 Recent work</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <div class="code-preview"><span class="comment">// before: nested callbacks</span>
+<span class="keyword">function</span> <span class="func">getData</span>(cb) {
+  <span class="func">fetch</span>(url, <span class="keyword">function</span>(res) {
+    <span class="func">parse</span>(res, <span class="keyword">function</span>(data) {
+      cb(data);
+    });
+  });
+}</div>
+          <div class="meta">
+            <h4>Async refactor</h4>
+            <p>Converted callback hell to async/await — 40% faster execution.</p>
+            <span class="badge">✅ debugged</span>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="code-preview"><span class="comment">// after: clean async</span>
+<span class="keyword">async</span> <span class="keyword">function</span> <span class="func">getData</span>() {
+  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="func">fetch</span>(url);
+  <span class="keyword">const</span> data = <span class="keyword">await</span> <span class="func">parse</span>(res);
+  <span class="keyword">return</span> data;
+}</div>
+          <div class="meta">
+            <h4>Async refactor</h4>
+            <p>Clean, maintainable, and testable code.</p>
+            <span class="badge">✅ delivered</span>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="code-preview"><span class="comment">// e-commerce cart module</span>
+<span class="keyword">class</span> <span class="func">Cart</span> {
+  <span class="func">constructor</span>() {
+    <span class="keyword">this</span>.items = [];
+  }
+  <span class="func">addItem</span>(item) {
+    <span class="keyword">this</span>.items.push(item);
+    <span class="keyword">this</span>.<span class="func">render</span>();
+  }
+}</div>
+          <div class="meta">
+            <h4>Cart system</h4>
+            <p>Full shopping cart with persistence and real-time sync.</p>
+            <span class="badge">✅ shipped</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container section-pad">
+      <h2>📬 Let's talk</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get in touch</h3>
+          <p>Have a project in mind? Need urgent debugging? Reach out and we'll respond within hours.</p>
+          <p>📧 hello@codecraft.dev<br>📞 +1 (555) 000-0000</p>
+          <p>We work with startups, agencies, and enterprises — from quick fixes to long-term partnerships.</p>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <label for="name">Your name</label>
+            <input type="text" id="name" placeholder="Jane Doe" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="jane@example.com" required>
+          </div>
+          <div class="form-row">
+            <label for="urgency">Urgency</label>
+            <select id="urgency">
+              <option value="low">Low — just exploring</option>
+              <option value="medium">Medium — need it this week</option>
+              <option value="high">High — ASAP!</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell us about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn">Send message ✉️</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="social-links">
+        <a href="#" aria-label="GitHub">🐙</a>
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="LinkedIn">💼</a>
+      </div>
+      <div class="copy">© 2025 CodeCraft — write · debug · ship</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Absorbing the multiverse of data to emit the singularity of truth. -->
+</body>
+</html>
